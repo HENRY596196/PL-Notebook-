@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>程式語言筆記本使用指南</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #6b8cbc;
+            --background-color: #f5f7fa;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #e1e4e8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px 0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        header {
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        section {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .tip {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .tip::before {
+            content: "💡 提示：";
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .warning {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .warning::before {
+            content: "⚠️ 注意：";
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        code {
+            background-color: #f0f2f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 20px 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-btn" title="返回筆記本">
+                <span>📝</span> 返回筆記本
+            </a>
+            <h1>程式語言筆記本使用指南</h1>
+        </header>
+
+        <section>
+            <h2>基本功能介紹</h2>
+            <h3>登入與註冊</h3>
+            <p>第一次使用時，您需要先建立帳號：</p>
+            <ol>
+                <li>點擊「註冊」分頁</li>
+                <li>填寫使用者名稱（3-20個字元）</li>
+                <li>設定密碼（至少6個字元）</li>
+                <li>確認密碼</li>
+            </ol>
+            <div class="tip">註冊完成後會自動登入。下次使用時，只需要在登入頁面輸入帳號密碼即可。</div>
+        </section>
+
+        <section>
+            <h2>筆記管理</h2>
+            <h3>建立新筆記</h3>
+            <ol>
+                <li>點擊側欄的「新增筆記」按鈕</li>
+                <li>填寫筆記標題</li>
+                <li>輸入檔案名稱（可參考建議的副檔名）</li>
+                <li>選擇程式語言</li>
+                <li>選擇分類（或保持在「未分類」）</li>
+                <li>輸入您的程式碼</li>
+            </ol>
+            <div class="tip">程式碼輸入時會即時顯示語法高亮的預覽，幫助您確認格式是否正確。</div>
+
+            <h3>儲存筆記</h3>
+            <p>您有兩種儲存選項：</p>
+            <ul>
+                <li><strong>儲存並批改</strong>：系統會分析您的程式碼並提供改善建議</li>
+                <li><strong>直接儲存</strong>：只儲存筆記，不進行程式碼分析</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>分類管理</h2>
+            <h3>建立新分類</h3>
+            <ol>
+                <li>在左側分類欄的輸入框中輸入分類名稱</li>
+                <li>點擊「新增」按鈕或按Enter鍵</li>
+            </ol>
+
+            <h3>使用分類</h3>
+            <ul>
+                <li>點擊分類可以篩選該分類下的筆記</li>
+                <li>分類旁邊會顯示該分類下的筆記數量</li>
+                <li>建立或編輯筆記時可以選擇分類</li>
+            </ul>
+
+            <h3>刪除分類</h3>
+            <p>點擊分類項目右側的垃圾桶圖示可以刪除分類。刪除分類時：</p>
+            <ul>
+                <li>系統會要求確認</li>
+                <li>該分類下的筆記會自動移至「未分類」</li>
+            </ul>
+            <div class="warning">刪除分類後無法復原，但不會刪除該分類下的筆記。</div>
+        </section>
+
+        <section>
+            <h2>程式碼批改功能</h2>
+            <h3>批改評分項目</h3>
+            <ul>
+                <li><strong>結構性（25分）</strong>：
+                    <ul>
+                        <li>程式碼縮排</li>
+                        <li>空行使用</li>
+                        <li>程式碼長度</li>
+                    </ul>
+                </li>
+                <li><strong>文件性（15分）</strong>：
+                    <ul>
+                        <li>註解數量和品質</li>
+                        <li>註解風格</li>
+                    </ul>
+                </li>
+                <li><strong>命名規範（10分）</strong>：
+                    <ul>
+                        <li>變數命名</li>
+                        <li>函式命名</li>
+                    </ul>
+                </li>
+                <li><strong>複雜度（10分）</strong>：
+                    <ul>
+                        <li>巢狀深度</li>
+                        <li>單行長度</li>
+                    </ul>
+                </li>
+                <li><strong>基礎分數（40分）</strong></li>
+            </ul>
+            <div class="tip">系統會根據程式碼的長度和複雜度自動調整各項目的權重。</div>
+        </section>
+
+        <section>
+            <h2>其他功能</h2>
+            <h3>統計資訊</h3>
+            <p>在筆記列表下方可以看到：</p>
+            <ul>
+                <li>總筆記數量</li>
+                <li>使用的程式語言數量</li>
+            </ul>
+
+            <h3>支援的程式語言</h3>
+            <p>目前支援以下程式語言的語法高亮：</p>
+            <ul>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>LaTeX</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
